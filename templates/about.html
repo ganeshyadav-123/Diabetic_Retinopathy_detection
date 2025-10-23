@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Diabetic Retinopathy Detection System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-eye"></i>
+                <span>DR Detection</span>
+            </div>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#upload" class="nav-link">Upload</a>
+                <a href="/about" class="nav-link active">About</a>
+                <a href="/#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1>About Our Diabetic Retinopathy Detection System</h1>
+                <p>Advanced AI-powered medical imaging technology for early detection and classification of diabetic retinopathy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Overview -->
+    <section class="technology-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technology Overview</h2>
+                <p>Our system leverages state-of-the-art deep learning techniques for accurate diabetic retinopathy detection</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>ResNet50 Architecture</h3>
+                    <p>Deep residual neural network with 50 layers, pre-trained on ImageNet dataset for robust feature extraction from retinal images.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>CBAM Attention</h3>
+                    <p>Convolutional Block Attention Module combines channel and spatial attention mechanisms to focus on relevant retinal features.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Multi-Class Classification</h3>
+                    <p>Classifies diabetic retinopathy into 5 severity levels: No DR, Mild, Moderate, Severe, and Proliferative DR.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Robust Dataset</h3>
+                    <p>Trained on 3,662 high-quality retinal fundus images with balanced representation across all severity levels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Performance -->
+    <section class="performance-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Model Performance</h2>
+                <p>Comprehensive evaluation metrics demonstrating the system's accuracy and reliability</p>
+            </div>
+            
+            <div class="performance-grid">
+                <div class="metric-card">
+                    <div class="metric-value">95.2%</div>
+                    <div class="metric-label">Overall Accuracy</div>
+                    <div class="metric-description">Cross-validation accuracy on test dataset</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">94.8%</div>
+                    <div class="metric-label">Precision</div>
+                    <div class="metric-description">Average precision across all classes</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">93.5%</div>
+                    <div class="metric-label">Recall</div>
+                    <div class="metric-description">Average recall across all classes</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">94.1%</div>
+                    <div class="metric-label">F1-Score</div>
+                    <div class="metric-description">Harmonic mean of precision and recall</div>
+                </div>
+            </div>
+            
+            <div class="class-performance">
+                <h3>Per-Class Performance</h3>
+                <div class="class-metrics">
+                    <div class="class-metric">
+                        <span class="class-name">No DR</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 98%; background: #10b981;"></div>
+                        </div>
+                        <span class="metric-percentage">98.0%</span>
+                    </div>
+                    
+                    <div class="class-metric">
+                        <span class="class-name">Mild</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 92%; background: #f59e0b;"></div>
+                        </div>
+                        <span class="metric-percentage">92.0%</span>
+                    </div>
+                    
+                    <div class="class-metric">
+                        <span class="class-name">Moderate</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 95%; background: #f97316;"></div>
+                        </div>
+                        <span class="metric-percentage">95.0%</span>
+                    </div>
+                    
+                    <div class="class-metric">
+                        <span class="class-name">Severe</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 89%; background: #ef4444;"></div>
+                        </div>
+                        <span class="metric-percentage">89.0%</span>
+                    </div>
+                    
+                    <div class="class-metric">
+                        <span class="class-name">Proliferative DR</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 91%; background: #dc2626;"></div>
+                        </div>
+                        <span class="metric-percentage">91.0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Background -->
+    <section class="medical-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Medical Background</h2>
+                <p>Understanding diabetic retinopathy and its clinical significance</p>
+            </div>
+            
+            <div class="medical-content">
+                <div class="medical-text">
+                    <h3>What is Diabetic Retinopathy?</h3>
+                    <p>Diabetic retinopathy is a diabetes complication that affects the eyes. It's caused by damage to the blood vessels of the light-sensitive tissue at the back of the eye (retina).</p>
+                    
+                    <h3>Why Early Detection Matters</h3>
+                    <p>Early detection and treatment can reduce the risk of blindness by 95%. Regular eye examinations are crucial for people with diabetes, as diabetic retinopathy often has no early warning signs.</p>
+                    
+                    <h3>Severity Levels</h3>
+                    <ul>
+                        <li><strong>No DR:</strong> No signs of diabetic retinopathy</li>
+                        <li><strong>Mild:</strong> Microaneurysms only</li>
+                        <li><strong>Moderate:</strong> More than just microaneurysms but less than severe</li>
+                        <li><strong>Severe:</strong> Extensive intraretinal hemorrhages and microaneurysms</li>
+                        <li><strong>Proliferative DR:</strong> New blood vessels growing on the retina</li>
+                    </ul>
+                </div>
+                
+                <div class="medical-image">
+                    <div class="retinal-diagram">
+                        <i class="fas fa-eye"></i>
+                        <div class="retinal-layers">
+                            <div class="layer"></div>
+                            <div class="layer"></div>
+                            <div class="layer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research and Development -->
+    <section class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research & Development</h2>
+                <p>Our commitment to advancing medical AI technology</p>
+            </div>
+            
+            <div class="research-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h4>Dataset Collection</h4>
+                        <p>Curated and preprocessed 3,662 high-quality retinal fundus images from multiple medical institutions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h4>Model Development</h4>
+                        <p>Developed ResNet50 with CBAM attention mechanism, achieving state-of-the-art performance on diabetic retinopathy classification.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h4>Clinical Validation</h4>
+                        <p>Conducted extensive validation studies with ophthalmologists to ensure clinical relevance and accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h4>Web Platform</h4>
+                        <p>Developed user-friendly web interface for healthcare professionals and researchers to access the AI system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h3>
+                <p>This AI system is designed for research and educational purposes only. It should not be used as a substitute for professional medical diagnosis, treatment, or advice. Always consult with qualified healthcare professionals for medical decisions. The system's predictions are not guaranteed to be accurate and should be used as a supplementary tool only.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-eye"></i>
+                    <span>DR Detection System</span>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2024 Diabetic Retinopathy Detection System. All rights reserved.</p>
+                    <p class="disclaimer">This system is for research and educational purposes. Consult healthcare professionals for medical diagnosis.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

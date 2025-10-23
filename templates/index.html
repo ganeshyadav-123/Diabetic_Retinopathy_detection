@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopathy Detection System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-eye"></i>
+                <span>DR Detection</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#upload" class="nav-link">Upload</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Advanced Diabetic Retinopathy Detection
+                </h1>
+                <p class="hero-subtitle">
+                    AI-powered retinal image analysis for early detection of diabetic retinopathy using deep learning technology
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Severity Levels</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3.6K</div>
+                        <div class="stat-label">Training Images</div>
+                    </div>
+                </div>
+                <a href="#upload" class="cta-button">
+                    <i class="fas fa-upload"></i>
+                    Upload Retinal Image
+                </a>
+            </div>
+            <div class="hero-image">
+                <div class="retinal-preview">
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Retinal Image Analysis</h2>
+                <p>Upload a retinal fundus image to get AI-powered diabetic retinopathy detection</p>
+            </div>
+            
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drop your retinal image here</h3>
+                        <p>or <span class="upload-link">browse files</span></p>
+                        <small>Supports PNG, JPG, JPEG formats</small>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                </div>
+                
+                <div class="image-preview" id="imagePreview" style="display: none;">
+                    <div class="preview-container">
+                        <img id="previewImage" src="" alt="Preview">
+                        <button class="remove-image" id="removeImage">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button class="analyze-button" id="analyzeButton">
+                        <i class="fas fa-search"></i>
+                        Analyze Image
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <div class="results-header">
+                    <h3>Analysis Results</h3>
+                    <div class="confidence-badge" id="confidenceBadge"></div>
+                </div>
+                
+                <div class="results-content">
+                    <div class="prediction-card">
+                        <div class="prediction-label">Predicted Condition</div>
+                        <div class="prediction-value" id="predictionValue"></div>
+                        <div class="prediction-description" id="predictionDescription"></div>
+                    </div>
+                    
+                    <div class="probability-chart">
+                        <h4>Severity Level Probabilities</h4>
+                        <div class="probability-bars" id="probabilityBars"></div>
+                    </div>
+                </div>
+                
+                <div class="recommendations" id="recommendations">
+                    <h4>Recommendations</h4>
+                    <div class="recommendation-content" id="recommendationContent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Our Technology</h2>
+                <p>Advanced AI-powered diabetic retinopathy detection system</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning Model</h3>
+                    <p>ResNet50 architecture with CBAM attention mechanism for enhanced feature extraction and classification accuracy.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Trained on 3,662 retinal images across 5 severity levels with state-of-the-art performance metrics.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Medical Grade</h3>
+                    <p>Designed for clinical use with robust preprocessing and validation for reliable medical diagnosis support.</p>
+                </div>
+                
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fast Analysis</h3>
+                    <p>Real-time image processing and analysis for immediate results to support clinical decision-making.</p>
+                </div>
+            </div>
+            
+            <div class="severity-levels">
+                <h3>Diabetic Retinopathy Severity Levels</h3>
+                <div class="severity-grid">
+                    <div class="severity-card no-dr">
+                        <div class="severity-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>No DR</h4>
+                        <p>No signs of diabetic retinopathy detected</p>
+                    </div>
+                    
+                    <div class="severity-card mild">
+                        <div class="severity-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h4>Mild</h4>
+                        <p>Early signs of diabetic retinopathy</p>
+                    </div>
+                    
+                    <div class="severity-card moderate">
+                        <div class="severity-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <h4>Moderate</h4>
+                        <p>Moderate diabetic retinopathy progression</p>
+                    </div>
+                    
+                    <div class="severity-card severe">
+                        <div class="severity-icon">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                        <h4>Severe</h4>
+                        <p>Severe diabetic retinopathy detected</p>
+                    </div>
+                    
+                    <div class="severity-card proliferate">
+                        <div class="severity-icon">
+                            <i class="fas fa-skull-crossbones"></i>
+                        </div>
+                        <h4>Proliferative DR</h4>
+                        <p>Advanced proliferative diabetic retinopathy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch for technical support or collaboration</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@drdetection.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Medical AI Research Center<br>123 Healthcare Blvd, City, State 12345</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-eye"></i>
+                    <span>DR Detection System</span>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2024 Diabetic Retinopathy Detection System. All rights reserved.</p>
+                    <p class="disclaimer">This system is for research and educational purposes. Consult healthcare professionals for medical diagnosis.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Modal -->
+    <div class="loading-modal" id="loadingModal">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Analyzing Image...</h3>
+            <p>Please wait while our AI processes your retinal image</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
